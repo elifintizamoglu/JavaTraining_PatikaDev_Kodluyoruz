@@ -14,5 +14,6 @@ public class TaxiCostCalculation {
 
         total = (total<20) ? 20 : total;
         System.out.println("You need to pay " + total);
+
     }
 }

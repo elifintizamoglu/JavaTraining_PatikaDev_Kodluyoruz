@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class AreaOfCircleSector {
     public static void main(String[] args) {
         int r,a;
-        double pi = 3.14, area, circumference;
+        double pi = 3.14, area;
 
         Scanner input = new Scanner(System.in);
 

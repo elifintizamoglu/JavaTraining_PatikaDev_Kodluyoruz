@@ -12,6 +12,6 @@ public class Practise_PalindromeNumber {
     }
 
     public static void main(String[] args) {
-        System.out.println(isPalindrome(4));
+        System.out.println(isPalindrome(1995));
     }
 }

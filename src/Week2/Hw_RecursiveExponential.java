@@ -19,7 +19,6 @@ public class Hw_RecursiveExponential {
         }
 
     }
-
     public static void main(String[] args) {
         //Variable declarations
         int base, exponent, result;

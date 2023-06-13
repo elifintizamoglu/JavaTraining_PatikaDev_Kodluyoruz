@@ -2,7 +2,7 @@ package Week2;
 
 import java.util.Scanner;
 
-public class Practise_Calculator {
+public class Practice_Calculator {
     static void plus() {
         Scanner scan = new Scanner(System.in);
         int number, result = 0, i = 1;

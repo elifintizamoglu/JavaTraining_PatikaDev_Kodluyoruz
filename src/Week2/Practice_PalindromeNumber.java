@@ -1,6 +1,6 @@
 package Week2;
 
-public class Practise_PalindromeNumber {
+public class Practice_PalindromeNumber {
     static boolean isPalindrome(int number) {
         int temp = number, reverseNumber = 0, lastNumber;
         while (temp != 0) {

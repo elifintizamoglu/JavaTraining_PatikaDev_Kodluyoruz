@@ -1,6 +1,6 @@
 package Week2;
 
-public class Practise_MinMaxInArray {
+public class Practice_MinMaxInArray {
     public static void main(String[] args) {
         int[] list = {56, 34, 1, 8, 155, -2, -33};
 

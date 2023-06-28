@@ -1,7 +1,5 @@
 package Week4_AdventureGame;
 
-import java.util.Random;
-
 public class Snake extends Obstacle {
     public static int DAMAGE;
 

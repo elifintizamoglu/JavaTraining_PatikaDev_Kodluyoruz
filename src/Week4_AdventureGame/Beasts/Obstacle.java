@@ -1,18 +1,20 @@
-package Week4_AdventureGame;
+package Week4_AdventureGame.Beasts;
 
-public abstract class GameChar {
+public class Obstacle {
     private int id;
     private String name;
     private int damage;
     private int health;
-    private int money;
+    private int award;
+    private int originalHealth;
 
-    public GameChar(int id, String name, int damage, int health, int money) {
+    public Obstacle(int id, String name, int damage, int health, int award) {
         this.id = id;
         this.name = name;
         this.damage = damage;
         this.health = health;
-        this.money = money;
+        this.award = award;
+        this.originalHealth = health;
     }
 
     public int getId() {
@@ -40,6 +42,9 @@ public abstract class GameChar {
     }
 
     public int getHealth() {
+        if (health < 0) {
+            health = 0;
+        }
         return health;
     }
 
@@ -47,11 +52,19 @@ public abstract class GameChar {
         this.health = health;
     }
 
-    public int getMoney() {
-        return money;
+    public int getAward() {
+        return award;
     }
 
-    public void setMoney(int money) {
-        this.money = money;
+    public void setAward(int award) {
+        this.award = award;
+    }
+
+    public int getOriginalHealth() {
+        return originalHealth;
+    }
+
+    public void setOriginalHealth(int originalHealth) {
+        this.originalHealth = originalHealth;
     }
 }

@@ -1,4 +1,4 @@
-package Week4_AdventureGame;
+package Week4_AdventureGame.Beasts;
 
 public class Snake extends Obstacle {
     public static int DAMAGE;

@@ -1,4 +1,4 @@
-package Week4_AdventureGame;
+package Week4_AdventureGame.Items;
 
 public class Armor {
     private int id;

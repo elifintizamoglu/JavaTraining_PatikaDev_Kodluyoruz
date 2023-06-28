@@ -1,4 +1,6 @@
-package Week4_AdventureGame;
+package Week4_AdventureGame.Characters;
+
+import Week4_AdventureGame.Items.Inventory;
 
 import java.util.Scanner;
 

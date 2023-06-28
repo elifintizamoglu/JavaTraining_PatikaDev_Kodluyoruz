@@ -1,5 +1,8 @@
 package Week4_AdventureGame;
 
+import Week4_AdventureGame.Characters.Player;
+import Week4_AdventureGame.Locations.*;
+
 import java.util.Scanner;
 
 public class Game {

@@ -1,4 +1,6 @@
-package Week4_AdventureGame;
+package Week4_AdventureGame.Locations;
+
+import Week4_AdventureGame.Characters.Player;
 
 import java.util.Scanner;
 

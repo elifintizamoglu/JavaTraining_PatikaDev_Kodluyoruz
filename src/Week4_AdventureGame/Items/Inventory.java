@@ -1,4 +1,7 @@
-package Week4_AdventureGame;
+package Week4_AdventureGame.Items;
+
+import Week4_AdventureGame.Items.Armor;
+import Week4_AdventureGame.Items.Weapon;
 
 public class Inventory {
     private Weapon weapon;

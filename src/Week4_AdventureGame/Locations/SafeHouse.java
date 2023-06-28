@@ -1,6 +1,8 @@
-package Week4_AdventureGame;
+package Week4_AdventureGame.Locations;
 
-public class SafeHouse extends NormalLoc{
+import Week4_AdventureGame.Characters.Player;
+
+public class SafeHouse extends NormalLoc {
     public SafeHouse(Player player) {
         super(player, "Safe House");
     }

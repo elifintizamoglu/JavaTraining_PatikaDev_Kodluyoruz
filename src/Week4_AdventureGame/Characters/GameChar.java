@@ -1,20 +1,18 @@
-package Week4_AdventureGame;
+package Week4_AdventureGame.Characters;
 
-public class Obstacle {
+public abstract class GameChar {
     private int id;
     private String name;
     private int damage;
     private int health;
-    private int award;
-    private int originalHealth;
+    private int money;
 
-    public Obstacle(int id, String name, int damage, int health, int award) {
+    public GameChar(int id, String name, int damage, int health, int money) {
         this.id = id;
         this.name = name;
         this.damage = damage;
         this.health = health;
-        this.award = award;
-        this.originalHealth = health;
+        this.money = money;
     }
 
     public int getId() {
@@ -42,9 +40,6 @@ public class Obstacle {
     }
 
     public int getHealth() {
-        if (health < 0) {
-            health = 0;
-        }
         return health;
     }
 
@@ -52,19 +47,11 @@ public class Obstacle {
         this.health = health;
     }
 
-    public int getAward() {
-        return award;
+    public int getMoney() {
+        return money;
     }
 
-    public void setAward(int award) {
-        this.award = award;
-    }
-
-    public int getOriginalHealth() {
-        return originalHealth;
-    }
-
-    public void setOriginalHealth(int originalHealth) {
-        this.originalHealth = originalHealth;
+    public void setMoney(int money) {
+        this.money = money;
     }
 }

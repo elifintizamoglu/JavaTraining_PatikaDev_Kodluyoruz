@@ -40,7 +40,11 @@ public abstract class BattleLoc extends Location {
                     System.out.println("---------You won the water.---------");
                     this.getPlayer().getInventory().setWater(true);
                 }
+            } else if(this.getName().equals("Mine")){
+                getSnakeAward();
             }
+
+
             if ((this.getPlayer().getInventory().isFood()) && this.getPlayer().getInventory().isFirewood() && this.getPlayer().getInventory().isWater()) {
                 System.out.println("========================================================");
                 System.out.println("YOU VISITED ALL LOCATIONS AND COLLECTED ALL THE AWARDS!");
@@ -55,6 +59,54 @@ public abstract class BattleLoc extends Location {
             return false;
         }
         return true;
+    }
+
+    public void getSnakeAward(){
+        int num = r.nextInt(100);
+
+        if(num < 3){
+            this.getPlayer().getInventory().setWeapon(Weapon.getWeaponObjById(1));
+            this.getPlayer().setDamage(this.getPlayer().getDamage() + 2);
+            System.out.println("You earned gun. Your new damage is: " + this.getPlayer().getDamage());
+        }
+        else if(num < 8){
+            this.getPlayer().getInventory().setWeapon(Weapon.getWeaponObjById(2));
+            this.getPlayer().setDamage(this.getPlayer().getDamage() + 3);
+            System.out.println("You earned sword.Your new damage is: " + this.getPlayer().getDamage());
+
+        }
+        else if (num < 15) {
+            this.getPlayer().getInventory().setWeapon(Weapon.getWeaponObjById(3));
+            this.getPlayer().setDamage(this.getPlayer().getDamage() + 7);
+            System.out.println("You earned rifle. Your new damage is: " + this.getPlayer().getDamage());
+        }
+        else if(num < 18) {
+            this.getPlayer().getInventory().setArmor(Armor.getArmorObjById(1));
+            System.out.println("Your earned light armor.");
+        }
+        else if(num < 23) {
+            this.getPlayer().getInventory().setArmor(Armor.getArmorObjById(2));
+            System.out.println("You earned medium armor.");
+        }
+        else if(num < 30) {
+            this.getPlayer().getInventory().setArmor(Armor.getArmorObjById(3));
+            System.out.println("You earned serious armor.");
+        }
+        else if(num < 35){
+            this.getPlayer().setMoney(this.getPlayer().getMoney() + 10);
+            System.out.println("You earned 10 money. Your new balance is " + this.getPlayer().getMoney());
+        }
+        else if(num < 42){
+            this.getPlayer().setMoney(this.getPlayer().getMoney() + 5);
+            System.out.println("You earned 5 money Your new balance is " + this.getPlayer().getMoney());
+        }
+        else if(num < 55){
+            this.getPlayer().setMoney(this.getPlayer().getMoney() + 1);
+            System.out.println("You earned 1 money Your new balance is " + this.getPlayer().getMoney());
+        }
+        else{
+            System.out.println("You earned nothing!");
+        }
     }
 
     //Fight method

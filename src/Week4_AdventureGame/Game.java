@@ -24,6 +24,7 @@ public class Game {
             System.out.println("3 - Cave -> Award: Food");
             System.out.println("4 - Forest -> Award: Firewood");
             System.out.println("5 - River -> Award: Water");
+            System.out.println("6 - Mine -> Award: Can be anything or nothing");
             System.out.println("0 - Exit");
             System.out.println("Please select where you want to go: ");
             int selectLoc = input.nextInt();
@@ -61,6 +62,9 @@ public class Game {
                         location = new River(player);
                         break;
                     }
+                case 6:
+                    location = new Mine(player);
+                    break;
                 default:
                     System.out.println("Please select a valid location!");
             }

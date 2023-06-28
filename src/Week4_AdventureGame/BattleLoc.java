@@ -7,6 +7,8 @@ public abstract class BattleLoc extends Location {
     private String award;
     private int maxObstacle;
 
+    private Random r = new Random();
+
     public BattleLoc(Player player, String name, Obstacle obstacle, String award, int maxObstacle) {
         super(player, name);
         this.obstacle = obstacle;
@@ -39,7 +41,7 @@ public abstract class BattleLoc extends Location {
                     this.getPlayer().getInventory().setWater(true);
                 }
             }
-            if ((this.getPlayer().getInventory().isFood()) && this.getPlayer().getInventory().isFirewood() && this.getPlayer().getInventory().isWater() ) {
+            if ((this.getPlayer().getInventory().isFood()) && this.getPlayer().getInventory().isFirewood() && this.getPlayer().getInventory().isWater()) {
                 System.out.println("========================================================");
                 System.out.println("YOU VISITED ALL LOCATIONS AND COLLECTED ALL THE AWARDS!");
                 System.out.println("YOU WON THE GAME!");
@@ -61,23 +63,40 @@ public abstract class BattleLoc extends Location {
             this.getObstacle().setHealth(this.getObstacle().getOriginalHealth());
             playerStats();
             obstacleStats(i);
+            int startChance = r.nextInt(100) + 1;
             while (this.getPlayer().getHealth() > 0 && this.getObstacle().getHealth() > 0) {
                 System.out.print("<H>it or <R>un: ");
                 String selectCombat = input.nextLine().toUpperCase();
                 if (selectCombat.equals("H")) {
-                    System.out.println("Siz vurdunuz.");
-                    this.getObstacle().setHealth(this.obstacle.getHealth() - this.getPlayer().getTotalDamage());
-                    afterHit();
-                    if (this.getObstacle().getHealth() > 0) {
-                        System.out.println();
-                        System.out.println("Beast hit you!");
+                    if (startChance <= 50) {
+                        System.out.println("///////You hit the beast.//////");
+                        this.getObstacle().setHealth(this.obstacle.getHealth() - this.getPlayer().getTotalDamage());
+                        afterHit();
+                        if (this.getObstacle().getHealth() > 0) {
+                            System.out.println();
+                            System.out.println("/////Beast hit you!///////");
+                            int obstacleDamage = this.getObstacle().getDamage() - this.getPlayer().getInventory().getArmor().getBlock();
+                            if (obstacleDamage < 0) {
+                                obstacleDamage = 0;
+                            }
+                            this.getPlayer().setHealth(this.getPlayer().getHealth() - obstacleDamage);
+                            afterHit();
+                        }
+                    } else {
+                        System.out.println("+++++Beast hit you!++++++");
                         int obstacleDamage = this.getObstacle().getDamage() - this.getPlayer().getInventory().getArmor().getBlock();
                         if (obstacleDamage < 0) {
                             obstacleDamage = 0;
                         }
                         this.getPlayer().setHealth(this.getPlayer().getHealth() - obstacleDamage);
                         afterHit();
+                        if(this.getPlayer().getHealth()>0){
+                            System.out.println("++++You hit the beast.+++++++");
+                            this.getObstacle().setHealth(this.obstacle.getHealth() - this.getPlayer().getTotalDamage());
+                            afterHit();
+                        }
                     }
+
                 } else {
                     return false;
                 }
@@ -121,7 +140,6 @@ public abstract class BattleLoc extends Location {
     }
 
     public int randomObstacleNumber() {
-        Random r = new Random();
         return r.nextInt(this.getMaxObstacle()) + 1;
     }
 

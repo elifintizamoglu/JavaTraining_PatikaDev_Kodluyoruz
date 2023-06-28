@@ -13,17 +13,19 @@ Good luck.
 
 ## Locations
 
-- Safe house: Health is fully restored.
-- Tool Store: Weapons or armor can be purchased.
-- Cave: You may encounter zombies.
-- Forest: You may encounter vampires.
-- River: You may encounter a bear.
+- Safe house: Health is fully filled.
+- Tool Store: Weapon or armor can be purchased.
+- Cave: You fight with zombies.
+- Forest: You fight with vampires.
+- River: You fight with bears.
+- Mine: You fight with snakes.
 
 ## Beasts
 
 - Zombies
 - Vampires
 - Bears
+- Snake
 
 
 ## Followed Path

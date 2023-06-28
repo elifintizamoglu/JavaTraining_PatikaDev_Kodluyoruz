@@ -1,6 +1,6 @@
 # Adventure Game
 
-I made a text-based adventure game with Java.
+I made a text-based adventure game with Java. This game is designed to gain better understanding on Object Oriented Programming.
 In this game, there are characters, weapons, armors, safe and dangerous locations. You choose a character and visit locations. In this location you might see and fight with beasts. 
 If you beat them, you get an award. If they beat you, game is over.
 Good luck.

@@ -1,6 +1,5 @@
 package Week4_AdventureGame;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Random;
 
 public abstract class BattleLoc extends Location {
@@ -18,7 +17,6 @@ public abstract class BattleLoc extends Location {
     @Override
     public boolean onLocation() {
         int obsNumber = this.randomObstacleNumber();
-        int count = 0;
         System.out.println("You are currently in " + getName());
         System.out.println("Be careful, " + obsNumber + " " + this.getObstacle().getName() + " is living here.");
         System.out.print("<F>ight or <R>un?: ");

@@ -1,5 +1,6 @@
 package Week4_AdventureGame;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Random;
 
 public abstract class BattleLoc extends Location {
@@ -17,15 +18,37 @@ public abstract class BattleLoc extends Location {
     @Override
     public boolean onLocation() {
         int obsNumber = this.randomObstacleNumber();
+        int count = 0;
         System.out.println("You are currently in " + getName());
         System.out.println("Be careful, " + obsNumber + " " + this.getObstacle().getName() + " is living here.");
         System.out.print("<F>ight or <R>un?: ");
         String selectCase = input.nextLine().toUpperCase();
         if (selectCase.equals("F") && combat(obsNumber)) {
-            if (combat(obsNumber)) {
-                System.out.println("You defeated all beasts in " + this.getName());
-                return true;
+            System.out.println("You defeated all beasts in " + this.getName());
+            if (this.name.equals("Cave")) {
+                if (this.getPlayer().getInventory().isFood() == false) {
+                    System.out.println("---------You won the food.---------");
+                    this.getPlayer().getInventory().setFood(true);
+                }
+            } else if (this.getName().equals("Forest")) {
+                if (this.getPlayer().getInventory().isFirewood() == false) {
+                    System.out.println("---------You won the firewood.---------");
+                    this.getPlayer().getInventory().setFirewood(true);
+                }
+            } else if (this.getName().equals("River")) {
+                if (this.getPlayer().getInventory().isWater() == false) {
+                    System.out.println("---------You won the water.---------");
+                    this.getPlayer().getInventory().setWater(true);
+                }
             }
+            if ((this.getPlayer().getInventory().isFood()) && this.getPlayer().getInventory().isFirewood() && this.getPlayer().getInventory().isWater() ) {
+                System.out.println("========================================================");
+                System.out.println("YOU VISITED ALL LOCATIONS AND COLLECTED ALL THE AWARDS!");
+                System.out.println("YOU WON THE GAME!");
+                System.out.println("CONGRATULATION!");
+                System.exit(0);
+            }
+            return true;
         }
         if (this.getPlayer().getHealth() <= 0) {
             System.out.println("You are dead!");

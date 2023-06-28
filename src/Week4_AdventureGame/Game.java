@@ -38,20 +38,35 @@ public class Game {
                     location = new ToolStore(player);
                     break;
                 case 3:
-                    location = new Cave(player);
-                    break;
+                    if (player.getInventory().isFood() != false) {
+                        System.out.println("You already have been in Cave and won the Food award.");
+                        continue;
+                    } else {
+                        location = new Cave(player);
+                        break;
+                    }
                 case 4:
-                    location = new Forest(player);
-                    break;
+                    if (player.getInventory().isFirewood() != false) {
+                        System.out.println("You already have been in Forest and won the Firewood award.");
+                        continue;
+                    } else {
+                        location = new Forest(player);
+                        break;
+                    }
                 case 5:
-                    location = new River(player);
-                    break;
+                    if (player.getInventory().isWater() != false) {
+                        System.out.println("You already have been in Forest and won the Firewood award.");
+                        continue;
+                    } else {
+                        location = new River(player);
+                        break;
+                    }
                 default:
                     System.out.println("Please select a valid location!");
             }
 
             if (location == null) {
-                System.out.println("Game Over, See You Later.");
+                System.out.println("You exited the game, See You Later.");
                 break;
             }
 

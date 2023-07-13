@@ -5,7 +5,7 @@ import java.sql.*;
 public class DBConn_Transaction {
     public static final String DB_URL = "jdbc:mysql://localhost/university";
     public static final String DB_USER = "root";
-    public static final String DB_PASSWORD = "438Rss.";
+    public static final String DB_PASSWORD = "your_password";
 
     public static void main(String[] args) {
         Connection connect = null;

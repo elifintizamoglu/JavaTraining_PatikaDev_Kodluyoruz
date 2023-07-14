@@ -1,4 +1,4 @@
-package com.patikadev;
+package Week6.com.patikadev;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.patikadev;
+package Week6.com.patikadev;
 
 import javax.swing.*;
 import java.awt.*;

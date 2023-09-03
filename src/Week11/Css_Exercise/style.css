@@ -1,0 +1,20 @@
+body {
+    background-color: #EBEF95;
+}
+
+article {
+    background-color: #EFD595;
+    font-family: sans-serif;
+}
+
+.ingredients{
+    font-style: italic;
+}
+
+h4 {
+    background-color: #EFB495;
+}
+
+#soon {
+    font-size: xx-large;
+}

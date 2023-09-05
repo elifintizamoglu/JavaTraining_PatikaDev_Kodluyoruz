@@ -1,0 +1,14 @@
+.avatar {
+    height: 125px;
+    width: 125px;
+    border-radius: 100%;
+}
+
+.avatar-box {
+    text-align: center;
+}
+
+.caro {
+    width: 100%;
+    height: auto;
+}

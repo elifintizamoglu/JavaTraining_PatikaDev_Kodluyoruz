@@ -1,0 +1,48 @@
+body {
+    background-color: #E9ECEF;
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    text-align: center;
+}
+
+.navbar {
+    background-color: gray;
+    list-style-type: none;
+    
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: rgb(185, 144, 223);
+}
+
+img {
+    width: 80px;
+    height: 270px;
+
+}
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    padding: 10px;
+    /*justify-content: flex-start;
+    display: flex;
+   align-items: center;
+  justify-content: center;*/
+    
+  }
+
+.container {
+    align-content: center;
+   
+}
